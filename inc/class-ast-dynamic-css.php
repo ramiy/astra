@@ -259,13 +259,6 @@ if ( ! class_exists( 'AST_Dynamic_CSS' ) ) {
 					'border-color'     => $btn_bg_color,
 					'background-color' => $btn_bg_color,
 				),
-				'.menu-toggle, button, .ast-button, input#submit, input[type="button"], input[type="submit"], input[type="reset"]' => array(
-					'border-radius'    => ast_get_css_value( $btn_border_radius, 'px' ),
-					'padding'          => ast_get_css_value( $btn_vertical_padding, 'px' ) . ' ' . ast_get_css_value( $btn_horizontal_padding, 'px' ),
-					'color'            => $btn_text_color,
-					'border-color'     => $btn_bg_color,
-					'background-color' => $btn_bg_color,
-				),
 				'button:focus, .menu-toggle:hover, button:hover, .ast-button:hover, input[type=reset]:hover, input[type=reset]:focus, input#submit:hover, input#submit:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="submit"]:hover, input[type="submit"]:focus' => array(
 					'color'            => $btn_text_hover_color,
 					'border-color'     => $btn_bg_hover_color,

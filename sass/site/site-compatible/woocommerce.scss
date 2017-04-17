@@ -26,6 +26,31 @@
 	  	  border-color:$color-border-input;
 		}
 	}
+
+	.woocommerce-ordering select {
+		padding: 0;
+	}
+}
+
+.woocommerce,
+.woocommerce-page {
+	ul.products {
+		li.product {
+			@media (min-width: $col-md + 1px ) {
+				width: 30.33%;
+				margin: 0 4.5% 2.992em 0;
+			}
+
+			.onsale {
+				width: 3.236em;
+				height: 3.236em;
+				line-height: 3;
+			}
+		}
+		li.last {
+			margin-right: 0;
+		}
+	}
 }
 
 // Shop Page Tab Style 

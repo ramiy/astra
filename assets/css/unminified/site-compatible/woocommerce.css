@@ -23,6 +23,30 @@
   border-color: #eaeaea;
 }
 
+.woocommerce .woocommerce-ordering select {
+  padding: 0;
+}
+
+@media (min-width: 769px) {
+  .woocommerce ul.products li.product,
+  .woocommerce-page ul.products li.product {
+    width: 30.33%;
+    margin: 0 4.5% 2.992em 0;
+  }
+}
+
+.woocommerce ul.products li.product .onsale,
+.woocommerce-page ul.products li.product .onsale {
+  width: 3.236em;
+  height: 3.236em;
+  line-height: 3;
+}
+
+.woocommerce ul.products li.last,
+.woocommerce-page ul.products li.last {
+  margin-right: 0;
+}
+
 .woocommerce-tabs .shop_attributes td {
   padding: 0.5em;
 }
