@@ -1,0 +1,62 @@
+variables:
+  # Configure mysql service (https://hub.docker.com/_/mysql/)
+  MYSQL_DATABASE: wordpress_tests
+  MYSQL_ROOT_PASSWORD: mysql
+
+before_script:
+  # Install dependencies
+  
+  # update the docker
+  - apt-get clean
+  - apt-get -yqq update
+
+  # instll the required packages for the running CI tests
+  - apt-get -yqqf install unzip subversion mysql-client libmysqlclient-dev --fix-missing
+
+  # PHP extensions
+  - docker-php-ext-enable mbstring mcrypt mysqli pdo_mysql intl gd zip bz2
+
+  # Set up WordPress tests
+  # - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
+
+  # Install PHPCS and WPCS
+  - composer global require "squizlabs/php_codesniffer=*"
+  - composer global require "wp-coding-standards/wpcs"
+  - phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
+
+PHPunit:PHP5.3:MySQL:
+  image: tetraweb/php:5.3
+  services:
+    - mysql:5.6
+  script:
+  - find . \( -name '*.php' ! -path './vendor/*' ! -path './admin/bsf-core/*' \) -exec php -lf {} \;
+  - if find . -name "*.php" ! -path "./vendor/*" ! -path "./admin/bsf-core/*" -exec php -l {} \; | grep "Errors parsing"; then exit 1; fi
+  - phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php' ! -path "./node_modules/*" ! -path "./admin/bsf-core/*" ! -path "./vendor/*")
+  # - phpunit --configuration phpunit.xml.dist
+
+PHPunit:PHP5.6:MySQL:
+  image: tetraweb/php:5.6
+  services:
+    - mysql:5.6
+  script:
+  - if find . -name "*.php" ! -path "./vendor/*" ! -path "./admin/bsf-core/*" -exec php -l {} \; | grep "Errors parsing"; then exit 1; fi
+  - phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php' ! -path "./node_modules/*" ! -path "./admin/bsf-core/*" ! -path "./vendor/*")
+  # - phpunit --configuration phpunit.xml.dist
+
+PHPunit:PHP7.0:MySQL:
+  image: tetraweb/php:7.0
+  services:
+    - mysql:5.6
+  script:
+  - if find . -name "*.php" ! -path "./vendor/*" ! -path "./admin/bsf-core/*" -exec php -l {} \; | grep "Errors parsing"; then exit 1; fi
+  - phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php' ! -path "./node_modules/*" ! -path "./admin/bsf-core/*" ! -path "./vendor/*")
+  # - phpunit --configuration phpunit.xml.dist
+
+PHPunit:PHP7.1:MySQL:
+  image: tetraweb/php:7.1
+  services:
+    - mysql:5.6
+  script:
+  - if find . -name "*.php" ! -path "./vendor/*" ! -path "./admin/bsf-core/*" -exec php -l {} \; | grep "Errors parsing"; then exit 1; fi
+  - phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php' ! -path "./node_modules/*" ! -path "./admin/bsf-core/*" ! -path "./vendor/*")
+  # - phpunit --configuration phpunit.xml.dist

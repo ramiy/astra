@@ -1,0 +1,260 @@
+/**
+ *  Header Sections
+ *
+ *  All sections within the header.
+ *
+ * Contents
+ * 1 - Common
+ * 2 - Social Follow
+ * 3 - Site Logo
+ * 4 - Search Form
+ * 
+ * # Responsive
+*/
+
+/**
+ * 1 - Common
+ */
+/* Default Padding For Nav */
+.nav-style {
+    display: block;
+    padding: 0 15px;
+}
+
+.ast-menu-toggle {
+    display: none;
+    background: transparent;
+    color: inherit;
+    border-style: dotted;
+    border-color: transparent;
+
+    &:focus,
+    &:hover {
+        background: transparent;
+        border-color: inherit;
+        color: inherit;
+    }
+}
+
+.socil-font {
+    float: left;
+    margin-right: 10px;
+}
+
+/**
+ * 4 - Search Form & Main Header
+ */
+.main-header-bar {
+    z-index: 4;
+    position: relative;
+    line-height: 4;
+    padding: 1em 0;
+    .sub-menu {
+        line-height: 1.45;
+    }
+    
+    .menu-item-has-children > a:after {
+        @include ast-has-child-menu-item();
+        line-height: normal;
+    }
+    .ast-search-icon {
+        display: block;
+        z-index: 4;
+        position: relative;
+    }
+
+    .slide-search .search-field {
+        background-color: white;
+        &:focus {
+            background-color: white;
+        }
+    }
+}
+.ast-search-menu-icon {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s;
+    position: absolute;
+    z-index: 3;
+    right: -.5em;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .astra-search-icon {
+        line-height: normal;
+    }
+
+    form {
+        border: 1px solid #e7e7e7;
+        line-height: 1;
+        padding: 0 2em 0 0;
+        @include ast-border-radius();
+        display: inline-block;
+        backface-visibility: hidden;
+        position: relative;
+        color: inherit;
+        background-color: transparent;
+    }
+
+    .search-field {
+        border: none;
+        background-color: transparent;
+        padding: .8em 0 .8em 1em;
+        transition: width .2s;
+        border-radius: inherit;
+        color: inherit;
+        font-size: inherit;
+        width: 0;
+        &:focus {
+            background-color: transparent;
+            color: inherit;
+        }
+    }
+
+    .search-submit {
+        display: none;
+    }
+
+    &.ast-dropdown-active {
+        visibility: visible;
+        opacity: 1;
+        .search-field {
+            width: 250px;
+        }
+    }
+}
+
+li.ast-masthead-custom-menu-items {
+    padding-left: 1em;
+    
+    a {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    a,
+    a:hover,
+    a:focus {
+        background: transparent;
+    }
+    .ast-search-icon .astra-search-icon {
+        line-height: 1;
+    }
+}
+
+.main-header-menu li.ast-masthead-custom-menu-items {
+    padding-right: 0;
+}
+
+.ast-header-break-point {
+
+    ul li.ast-masthead-custom-menu-items a {
+        padding: 0;
+        width: auto;
+        display: initial;
+    }
+
+    li.ast-masthead-custom-menu-items {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .ast-site-identity {
+        padding: 0;
+    }
+
+    .menu-item-has-children > a:after {
+        display: none;
+    }
+
+    .main-header-bar {
+        line-height: 3;
+        display: block;
+        padding: 0;
+        .sub-menu {
+            line-height: 3;
+        }
+
+        .menu-item-has-children {
+            
+            .sub-menu {
+                display: none;
+            }
+
+            > .ast-menu-toggle {
+
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                padding: 0.5em 1em;
+                font-weight: normal;
+
+                &::before {
+                    content: "\e313";
+                    font-family: 'Astra';
+                    text-decoration: inherit;
+                    display: inline-block;
+                }
+            }
+        }
+        .ast-submenu-expanded {
+            >.ast-menu-toggle::before {
+               transform: rotateX(180deg);
+            }
+        }
+        
+        .main-header-bar-navigation {
+            display: none;
+        }
+        .main-header-menu {
+            border-top: 1px solid #eaeaea;
+        }
+        
+        
+        //  On Desktop we toggle by jQuery
+        //  So, Showing search with !important for mobile & tablets
+    }
+    
+    .ast-search-menu-icon {
+        position: relative;
+        display: block;
+        right: auto;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Styling Nav */
+    .main-navigation {
+        display: block;
+        width: 100%;
+
+        ul {
+            > li:first-child {
+                border-top: 0;
+            }
+
+            ul {
+                left: auto;
+                right: auto;
+            }
+        }
+
+        li {
+            width: 100%;
+        }
+    }
+
+    /* Main Header */
+    .main-header-bar-navigation {
+        width: calc( 100% + 40px );
+        margin: 0 -20px;
+    }
+    
+    .main-header-menu {
+        ul ul {
+            top: 0;
+        }
+    }
+}

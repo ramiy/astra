@@ -1,0 +1,50 @@
+/**
+ * 	Header Layouts
+ *
+ * @import
+ * 1 - Header Layout 1
+ * 2 - Header Layout 2
+ * 3 - Header Layout 3
+ * 4 - Next Button Menu Item
+ * 5 - Responsive Style
+*/
+
+/* 4 - Next Button Menu Item */
+.main-header-bar {
+	z-index: 1;
+}
+
+/* 5 - Responsive Style */
+.main-header-bar {
+	@media ( max-width: $mx-col-sm ) {
+		.main-header-container,
+		.ast-justify-content-flex-end {
+			justify-content: center;
+
+			.site-branding {
+				width: 100%;
+				text-align: center;
+			}
+			.site-title {
+				text-align: center;
+				width: 100%;
+				display: block;
+			}
+			.ast-site-identity {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.ast-header-break-point {
+
+	.main-header-bar {
+		.site-branding {
+			padding: 1.5em 0;
+			@media ( max-width: $mx-col-sm ) {
+				padding: 0.5em 0;
+			}
+		}
+	}
+}

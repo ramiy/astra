@@ -1,0 +1,75 @@
+/**
+ * Astra Theme compatibility with WooCommerce
+ */
+@import "../../grid/variables";
+@import "../variables-site/structure";
+@import "../variables-site/colors";
+
+.woocommerce {
+ 	
+ 	h2 {
+     	margin-bottom: 0.7em;
+	}
+
+	.quantity {
+		input[type="text"], 
+		input[type="number"], 
+		input[type="email"] {
+	  	  padding: 0.3em;
+		}
+
+		input[type="text"]:focus, 
+		input[type="number"]:focus, 
+		input[type="email"]:focus {
+	  	  outline:none;
+	  	  box-shadow: none;
+	  	  border-color:$color-border-input;
+		}
+	}
+}
+
+// Shop Page Tab Style 
+
+.woocommerce-tabs {
+	.shop_attributes td {
+   		padding: 0.5em;
+   	}
+}
+
+//Seperate container layout
+.ast-separate-container{
+	@media (min-width: $col-md) {
+		&.archive{
+			.ast-woocommerce-container{
+				margin-bottom: 4em;
+			}
+		}
+	}
+	.ast-woocommerce-container{
+		background-color: $color-background-content;
+		@media (max-width: $mx-col-xl) {
+			    padding: 3.34em 2.4em;
+		}
+		@media (max-width: $mx-col-lg) {
+			    padding: 1.5em 2.14em;
+		}
+		@media (max-width: $mx-col-sm) {
+				padding: .54em 1em 1.33333em;
+		}
+
+		@media (min-width: $col-xl) {
+			    padding: 5.34em 6.67em;
+		}
+		.product {
+		    border-bottom: 0;
+		}
+	}
+	&.single-product {
+		.ast-article-single{
+			margin:0;
+			padding:0;
+		}
+	}
+
+
+}

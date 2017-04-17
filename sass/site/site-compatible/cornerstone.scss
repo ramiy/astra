@@ -1,0 +1,58 @@
+/**
+ * Astra Theme compatibility with Cornerstone Page Builder
+ */
+@import "../../grid/variables";
+.ast-cornerstone-compatibility {
+
+	// Remove article margin bottom 
+
+	&.ast-single-post .hentry {
+		margin: 0;
+	}
+
+	// Attach first row to header 
+	
+	&.ast-no-sidebar {
+		#primary,
+		#secondary {
+		 	padding-top: 0;
+		 	padding-bottom: 0;
+		}
+	}
+
+	// Full Width Support For Beaver Builder
+
+	&.ast-no-sidebar {
+		.entry-header {
+			margin-left: auto;
+			margin-right: auto;
+			padding-left:  ($grid-gutter-width / 2);
+			padding-right: ($grid-gutter-width / 2);
+		}
+	}
+
+	&.ast-box-layout,
+	&.ast-padded-layout {
+		&.ast-no-sidebar .entry-header {
+			padding-left:  ($grid-gutter-width);
+			padding-right: ($grid-gutter-width);
+		}
+	}
+		
+	&.ast-no-sidebar:not(.search) {
+
+		#content > .ast-container {
+			max-width: none;
+			width: auto;
+			padding-left: 0;
+			padding-right: 0;
+		}	
+	}
+
+	:not(.ast-single-post) .entry-content, 
+	&.ast-single-post .entry-content {
+	    margin-top: 0;
+	    margin-bottom: 0;
+	}
+
+}

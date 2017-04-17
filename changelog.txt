@@ -1,0 +1,20 @@
+v1.0.1
+# Fixed: Fixed correct usage of esc_attr() and esc_html() functions.
+# Added license and attribution to all the asssets included in the theme.
+# Properly use get_search_form() function.
+# Updated Theme Screenshot.
+# Updated Theme URI.
+# Changed text-domain as `astra`
+# Added flexibility unminified file.
+# Tweaked the code to skip need to override WordPress globals.
+# Fixed Terniary condition middle omittion not working in PHP < 5.3
+# Removed: All functionality related to child theme creation.
+# Removed: Code that removes default customiser control.
+# Removed: Registering admin menu from the theme.
+# Removed: Customizer & Meta notice for `Page Builder` content layout.
+# Removed: Reset customizer from theme.
+# Removed: All code related to on-boarding from theme.
+# Removed: All unused and unnecessary functions.
+
+v1.0.0 
+- Initial release

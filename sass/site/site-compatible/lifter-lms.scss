@@ -1,0 +1,29 @@
+.widget {
+	
+	/**
+	 * Progress Widget
+	 */
+	.progress__indicator {
+		line-height: 30px;
+	}
+
+	.llms-progress {
+		.llms-progress-bar {
+			border-radius: 20px;
+	    	height: 20px;
+		}
+
+		.progress-bar-complete {
+			border-radius: 20px;
+		}
+	}
+
+	/**
+	 * Course Widget
+	 */
+	.llms-course-outline {
+		ul {
+			margin-left: 1.5em;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+/*
+ * Astra Theme compatibility with Visual Composer
+ */
+
+ .js_active {
+
+ 	// Removed article margin
+
+ 	.ast-single-post {
+		.hentry {
+			margin:0;
+		}
+	}
+
+	// Attach first row to header 
+
+	.ast-no-sidebar {
+		#primary,
+		#secondary {
+		 	padding-top: 0;
+		 	padding-bottom: 0;
+		}
+	}
+
+	:not(.ast-single-post) .entry-content, 
+	.ast-single-post .entry-content {
+	    margin-top: 0;
+	    margin-bottom: 0;
+	}
+
+}

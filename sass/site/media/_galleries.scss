@@ -1,0 +1,28 @@
+.single .entry-content .gallery {
+    margin-left: -10px;
+	margin-right: -10px;
+}
+
+.gallery-caption {
+	color: black;
+    padding: 10px;
+    border-radius: 0 0 2px 2px;
+    border: 1px solid $color-border-gallery;
+    border-top: none;
+    font-size: 0.9em;
+}
+.gallery-icon {
+    border-bottom: 0;
+    border-radius: 2px 2px 0 0;
+    border: 1px solid $color-border-gallery;
+    overflow: hidden;
+}
+.gallery-item {
+	margin: 0;
+	padding: 10px;
+	border-radius: 2px;
+
+    &:last-child {
+        margin-bottom: 2em;
+    }
+}

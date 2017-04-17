@@ -1,0 +1,57 @@
+/*
+ * Astra Theme compatibility with Elementor
+ */
+
+.elementor-page {
+
+  // Removed article margin
+
+    &.ast-single-post {
+        .hentry {
+            margin:0;
+        }
+    }
+
+    // Attach first row to header 
+
+    &.ast-no-sidebar {
+        #primary,
+        #secondary {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &:not(.ast-single-post) .entry-content, 
+    &.ast-single-post .entry-content {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    // Check for search page
+
+    &.search {
+        #content {
+            .entry-header {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+// Editor Active
+.elementor-editor-active{
+	&.ast-no-sidebar {
+        #primary,
+        #secondary {
+            padding-top: 5px;
+        }
+	}
+
+    // Fix the z-index issue from first column.
+    .site-content .elementor.elementor-edit-mode .elementor-element > .elementor-element-overlay {
+        z-index: 10;
+    }
+}
+

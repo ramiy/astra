@@ -1,0 +1,16 @@
+.ast-header-break-point {
+	@media all and ( max-width: $mx-col-sm ) { 
+    .main-header-container{
+    		display: block;
+    	}
+    }
+	.ast-mobile-menu-buttons {
+		text-align: right;
+		padding: 1.5em 0;
+		
+		@media all and ( max-width: $mx-col-sm ) { 
+			text-align: center;
+	    	padding-top: 0;
+		}
+	}
+}

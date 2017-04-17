@@ -1,0 +1,23 @@
+/*
+ * Astra Theme compatibility Site Origin Builder
+ */
+.siteorigin-panels.ast-single-post .hentry {
+  margin: 0;
+}
+
+.siteorigin-panels.ast-no-sidebar #primary,
+.siteorigin-panels.ast-no-sidebar #secondary {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.siteorigin-panels :not(.ast-single-post) .entry-content,
+.siteorigin-panels .ast-single-post .entry-content {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.siteorigin-panels .panel-row-style {
+  z-index: 0;
+  position: relative;
+}
